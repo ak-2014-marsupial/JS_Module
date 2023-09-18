@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sessions</title>
+</head>
+<body>
+<script>
+    let sessions = JSON.parse(localStorage.getItem("session"));
+    sessions.forEach(item=> {
+        let div = document.createElement("div");
+        div.innerText=item;
+        document.body.appendChild(div)
+    })
+</script>
+
+
+</body>
+</html>

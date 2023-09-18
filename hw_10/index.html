@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW_10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 500px;
+            padding: 0.8rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .wrap {
+            flex-wrap: wrap;
+            gap: 1rem
+        }
+
+        .w-50 {
+            width: 45%;
+        }
+
+        .mb-1 {
+            margin-bottom: 1rem;
+        }
+
+        .mx-1 {
+            margin: 0 1rem;
+        }
+
+        .px-1 {
+            padding: 0 0.8rem;
+        }
+        .p-1{
+            padding: 0.8rem;
+        }
+        label, input {
+            height: 5vh;
+        }
+
+        .f-a-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .f-j-end {
+            justify-content: end;
+        }
+
+        .f-j-center {
+            justify-content: center;
+        }
+
+        input[type=submit] {
+            border: 1px solid green;
+            border-radius: 10px;
+            font-size: 20px;
+            width: 50%;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .border-red {
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        .border-blue {
+            border: 1px solid blue;
+            border-radius: 7px;
+        }
+
+        .btn-olivedrab {
+            background: olivedrab;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .cell {
+            padding: 0 10px;
+        }
+        .label{
+            border:1px solid red;
+            border-radius: 50%;
+            background: red;
+            color:white;
+            font-size: 20px;
+            padding: 5px;
+            top: 0px;
+            left: -20px;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        a{
+            text-decoration: none;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+<form action="" name="form1" class="container row border-red mb-1">
+    <div class="col w-50">
+        <label class="mb-1 px-1 f-a-center f-j-end" for="firstname">Ім'я </label>
+        <label class="mb-1 px-1 f-a-center f-j-end" for="surname">Прізвище </label>
+        <label class="mb-1 px-1 f-a-center f-j-end" for="age">Вік </label>
+    </div>
+    <div class="col w-50">
+        <input class="mb-1 px-1" type="text" id="firstname" name="firstname" placeholder="Введіть ваше ім'я">
+        <input class="mb-1 px-1" type="text" id="surname" name="surname" placeholder="Введіть ваше прізвище">
+        <input class="mb-1 px-1" type="number" id="age" name="age" placeholder="Введіть ваш вік">
+        <input class="mb-1 px-1 " type="submit" name="submit" value="Submit">
+    </div>
+    <div class="label">1</div>
+</form>
+
+<div id="counter" class="container row border-red mb-1">
+</div>
+
+<div class="container border-red mb-1 f-a-center f-j-end">
+    <a href="session.html" class="btn-olivedrab p-1 f-a-center f-j-center w-50  border-red">Open Session</a>
+
+    <div class="label">3</div>
+</div>
+<div id="arrMock" class="container row border-red f-j-center wrap mb-1">
+    <div id="items" class="container row border-blue f-j-center wrap"></div>
+    <input type="button" id="prev" class="btn-olivedrab w-50 border-red" value="Preview" onclick="prev10items()">
+    <input type="button" id="next" class="btn-olivedrab w-50 border-red" value="Next" onclick="next10items()">
+    <div class="label">4</div>
+</div>
+<div class="container row f-j-end border-red mb-1">
+    <div id="text" class="border-blue px-1 w-50 ">TEXT</div>
+    <input type="button" class="btn-olivedrab border-red mx-1 w-50" onclick="hideText()" value="hide Text">
+    <div class="label">5</div>
+</div>
+<div class="border-red container mb-1">
+    <div class=" row  mb-1 f-j-center">
+        <label for="age18" class="px-1 f-a-center">Вік </label>
+        <input type="number"  id="age18" class="border-blue px-1 w-50" min="1" max="100" placeholder="type your age">
+        <input type="button" value="Ввести" class="btn-olivedrab border-red mx-1 w-50" onclick="checkOutAge()">
+    </div>
+    <p id="message"></p>
+    <div class="label">6</div>
+</div>
+
+<div class="container border-red mb-1">
+    <div class="row ">
+        <div class="col w-50  ">
+            <label for="rowCount" class="px-1 f-a-center f-j-end mb-1">Кількість рядків</label>
+            <label for="colCount" class="px-1 f-a-center f-j-end mb-1">Кількість стовбчиків</label>
+            <label for="context" class="px-1 f-a-center f-j-end mb-1">Наповнення</label>
+        </div>
+        <div class="col w-50">
+            <input type="number" id="rowCount" class="mb-1 px-1 border-blue" value="5">
+            <input type="number" id="colCount" class="mb-1 px-1 border-blue" value="5">
+            <input type="text" id="context" class="mb-1 px-1 border-blue" value="*******">
+            <input type="button" id="btnTable" class="btn-olivedrab border-red" onclick="createTable()"
+                   value="Створити таблицю">
+        </div>
+    </div>
+    <div class="label">7</div>
+</div>
+<table id="table" rules="cols" class="row mb-1 f-j-center "></table>
+<div class="container border-red mb-1">
+    <div id="onehundred">100 грн</div>
+    <div class="label">8</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
