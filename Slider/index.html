@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+.container{
+    width: 80%;
+    margin: 50px auto 0;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+        .slider{
+            width: 600px;
+            height: 200px;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+
+        .slider-line{
+            display: flex;
+            height: 200px;
+            position: relative;
+            left: 0;
+            transition-property: all;
+            transition-timing-function:ease-in-out;
+            transition-duration: 1s;
+            z-index: 1000;
+        }
+        .img{
+            width: 300px;
+            height: 200px;
+            background: white;
+
+        }
+        img{
+            width: 300px;
+            height: auto;
+        }
+        .btn{
+            width: 150px;
+            height: 200px;
+            border: 1px solid red;
+            border-radius:  50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: beige;
+            background: rgba(0, 128, 0, 0.84);
+
+        }
+        .btn-prev{
+            padding-right: 5px;
+            left: -80px;
+            justify-content: end;
+        }
+        .btn-next{
+            padding-left: 5px;
+            left: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button id="next" class="btn btn-next">Next</button>
+    <div class="slider">
+        <div class="slider-line">
+            <div class="img"><img src="./img/image6.jpg" alt="img6" srcset=""></div>
+            <div class="img"><img src="./img/image5.jpg" alt="img5" srcset=""></div>
+            <div class="img"><img src="./img/image1.jpg" alt="img1" srcset=""></div>
+            <div class="img"><img src="./img/image2.jpg" alt="img2" srcset=""></div>
+            <div class="img"><img src="./img/image3.jpg" alt="img3" srcset=""></div>
+            <div class="img"><img src="./img/image7.jpg" alt="img7" srcset=""></div>
+            <div class="img"><img src="./img/image8.jpg" alt="img8" srcset=""></div>
+            <div class="img"><img src="./img/image9.jpg" alt="img9" srcset=""></div>
+        </div>
+    </div>
+
+    <button id="prev" class="btn btn-prev">Prev</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
