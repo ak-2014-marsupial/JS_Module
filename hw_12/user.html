@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User-Info</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 50%;
+            margin: 50px auto;
+            border: 1px solid red;
+            border-radius: 10px;
+            background-color: beige;
+            padding: 20px;
+        }
+        h3,h2{
+            display: inline-block;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    let id = window.location.search.split("=")[1];
+    const container = document.getElementById("container")
+
+    function render(data) {
+        for (let node in data) {
+            let block = document.createElement("div")
+            if (typeof data[node] == "object") {
+                render(data[node])
+            } else {
+                let key = document.createElement("h3")
+                let value = document.createElement("h2")
+                key.innerText = node;
+                value.innerText = data[node];
+                block.append(key, value);
+            }
+            container.appendChild(block)
+        }
+
+    }
+
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            render(data);
+        })
+</script>
+</body>
+</html>
