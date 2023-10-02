@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #020230;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0 2em;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 2em 0;
+}
+.flex-x{
+    display: flex;
+    gap: 1.5em;
+}
+
+.flex-y{
+    display: flex;
+    flex-direction: column;
+}
+.wrap{
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.flex-a-start{
+    align-items: flex-start;
+}
+.flex-a-end{
+    align-items: flex-end;
+}
+.flex-jc-sb{
+    justify-content: space-between;
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+
+.card {
+    background: linear-gradient(#0e0124, #22074d);
+    border-radius: 1em;
+    position: relative;
+    box-shadow: 0.2em 0.2em 0.1em 0.1em rgba(0, 128, 128, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0.8em 0;
+}
+
+.badge {
+    background: rgba(0, 128, 128, 0.08);
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-45{
+    height: 48vh;
+}
+.h-100{
+    height: 100vh;
+}
+.h-70{
+    height: 60vh;
+}
+.w-100{
+    width: 100%;
+}
+.w-95{
+    width: 95%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-60{
+    width: 65%;
+}
+.w-70 {
+    width: 70%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-30{
+    width: 30%;
+}
+.w-18{
+    width: 18%;
+}
+.w-22{
+    width: 22%;
+}
+.w-90{
+    width: 90%;
+}
+.fz-08{
+    font-size: 0.8rem;
+}
+.fz-09{
+    font-size: 0.9rem;
+}
+.fz-1{
+    font-size: 1rem;
+}
+.border-red {
+    border: 1px solid red;
+}
+.border-white{
+    border:1px solid white;
+}
+.entry{
+    display: flex;
+}
+.entry__key{
+    color: #ffc728;
+    text-align: end;
+    flex-shrink: 0;
+}
+.entry__value{
+    text-align: start;
+}
+.btn {
+    background-color: teal;
+    font-size: 1rem;
+    padding: 0.2em 0;
+    border-radius: 0.5em;
+    color: inherit;
+    border: none;
+    box-shadow: 0 0 5px teal, 0 0 25px teal;
+    cursor: pointer;
+    text-align: center;
+    margin: 1em auto 0 ;
+}
+.btn:hover{
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan,  0 0 200px cyan ;
+}

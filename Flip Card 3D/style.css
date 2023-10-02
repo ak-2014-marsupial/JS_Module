@@ -1,0 +1,65 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+}
+body {
+    background-color: #f2f1ed;
+    color: #de4848;
+}
+
+.flip-card {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,0.2);
+    border-radius: 0.1em;
+    overflow: hidden;
+}
+
+.top,
+.bottom,
+.flip-card.flip::after,
+.flip-card.flip::before{
+    height: 0.75em;
+    line-height: 1;
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+.top ,
+.flip-card.flip::after{
+    background-color: #f7f7f7;
+    border-top-right-radius: 0.1em;
+    border-top-left-radius: 0.1em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.bottom,
+.flip-card.flip::after{
+    background-color: white;
+    border-bottom-right-radius: 0.1em;
+    border-bottom-left-radius: 0.1em;
+    display: flex;
+    align-items: flex-end;
+}
+.flip-card.flip::before{
+    /*line-height: 1;*/
+    /*padding-top: 0.25em;*/
+    /*height: 50%;*/
+    /*text-align: center;*/
+    /*overflow: hidden;*/
+    /*background-color: #ffc728;*/
+    position: absolute;
+    content: "5";
+    width: 100%;
+    animation: flip-down 1000ms ease-in;
+    transform-origin: bottom;
+}
+
+@keyframes flip-down {
+    100%{
+        transform: rotateX(90deg);
+    }
+}
